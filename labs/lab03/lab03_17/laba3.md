@@ -409,6 +409,19 @@ class Doubly_Linked_List:
         self.size = 0
         self.head = None
 
+    def no_dublicates(self):
+        set_of_dublicates = set()
+        temp = self.head
+        while temp != None:
+            if self.count(temp.data) > 1:
+                set_of_dublicates.add(temp.data)
+            temp = temp.next
+        for j in set_of_dublicates:
+            count = self.count(j)
+            for i in range(1, count):
+                deleted = self.pop(str(self.find_item(j)))
+        return self
+
     # Мне было скучно
     def count(self, item): #Подсчет количества элементов с заданным значением
         if self.head == None:
@@ -441,6 +454,8 @@ class Doubly_Linked_List:
         return self
 
     def is_digit(self):
+        if self.head == None:
+            return "empty"
         temp = self.head
         count_not_digits = 0
         while temp != None:
@@ -682,7 +697,9 @@ while (True):
                 print(result)
         case "is digit":
             result = mylist.is_digit()
-            if result:
+            if result == "empty":
+                print("В пустом списке нет ни чисел ни чего-либо еще :З")
+            elif result:
                 print("Список состоит только из чисел")
             else:
                 print("В списке присутствуют не только численные элементы")
@@ -704,7 +721,12 @@ while (True):
                 print("В списке", result, "элементов, которые больше суммы списка")
         case "stop":
             break
+        case "no dublicates":
+            print(mylist.no_dublicates())
     x = input("Введите еще команду: ")
+```
+
+```python
 
 ```
 
