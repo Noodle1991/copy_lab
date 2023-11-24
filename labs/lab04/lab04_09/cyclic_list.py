@@ -290,7 +290,7 @@ class CircularSinglyList:
                 temp = new_node.next
                 count += 1
             else:
-                temp = temp.next.next
+                temp = temp.next
                 count += 1
             print(count, temp.data)
 

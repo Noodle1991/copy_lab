@@ -243,7 +243,7 @@ def closing_brackets(string):
                     if mystack.get_top() == "[":
                         deleted = mystack.pop_front()
                     else:
-                        return "wrong string"
+                        raise Exception("error")
                         break
                 case "}":
                     if mystack.get_top() == "{":
@@ -255,6 +255,13 @@ def closing_brackets(string):
                     return "wrong string"
             i+=1
     return True
+
+try:
+    closing_brackets("({[()]}}")
+except Exception as try_:
+    print(try_)
+finally:
+    code with/without 
 
 print(closing_brackets("{{[()]}}"), "True")
 print(closing_brackets("{{}}[()]{}{}"), "True")
