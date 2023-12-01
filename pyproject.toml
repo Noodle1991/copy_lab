@@ -13,6 +13,7 @@ numpy = "^1.26.1"
 notebook = "^7.0.6"
 jupytext = "^1.15.2"
 matplotlib = "^3.8.1"
+jupyter-server = "<2.11.0"  # https://github.com/mwouts/jupytext/issues/1165
 
 
 [tool.jupytext]
